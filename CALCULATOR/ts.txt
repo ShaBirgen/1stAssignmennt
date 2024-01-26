@@ -1,0 +1,179 @@
+class Calculator {
+  // ... (the rest of the Calculator class code)
+  clear() {
+    this.operator = null;
+    return [];
+  }
+  constructor() {
+    this.operator = null;
+  }
+  setOperator(operator) {
+    this.operator = operator;
+  }
+}
+
+const calculator = new Calculator();
+const display = document.querySelector(".screen");
+const buttons = document.querySelectorAll(".button");
+const button = document.querySelectorAll(".number, .clear");
+const clearButton = document.querySelector(".clear")
+const operator = document.querySelectorAll(".operator");
+// const answer = document.querySelector(".equal");
+// let button = document.q
+// console.log(button);
+
+let clear = new Calculator;
+
+
+
+// ARRAY OF NUMBERS
+
+let initial = []
+button.forEach((button) => {
+  // console.log(button.className === "clear");
+  button.addEventListener("click", () => {
+    const value = button.dataset.value;
+    initial.push(value)
+    let joined = initial.join('')
+    if (!isNaN(joined)) {
+      console.log(joined);
+      display.textContent = joined;
+    } 
+  });
+});
+
+
+
+//OPERATORS
+operator.forEach((operatorButton) => {
+  operatorButton.addEventListener("click", () => {
+    const operator = operatorButton.dataset.value;
+
+    if (initial.length > 0) {
+      calculator.setOperator(operator);
+      display.textContent += " " + operator + " ";
+      // You might want to handle additional logic for operators here
+      // For example, you may want to prevent consecutive operators
+    }
+  });
+});
+
+
+//CLEAR
+clearButton.addEventListener("click", () => {
+  initial = calculator.clear();
+  display.textContent = "";
+});
+
+
+const equalButton = document.querySelector(".equal");
+equalButton.addEventListener("click", () => {
+  console.log('answer');
+  let calculate= value += value
+  const result = calculator.calculate();
+  display.textContent = result;
+});
+
+
+//ATTEMPT
+class Calculator {
+  // ... (the rest of the Calculator class code)
+  clear() {
+    this.operator = null;
+    return [];
+  }
+  constructor() {
+    this.operator = null;
+  }
+  setOperator(operator) {
+    this.operator = operator;
+  }
+
+  isNumberAfterOperators(){
+    this.initial2 = joint;
+    return joint;
+  }
+}
+
+const calculator = new Calculator();
+const display = document.querySelector(".screen");
+const buttons = document.querySelectorAll(".button");
+const button = document.querySelectorAll(".number, .clear");
+const clearButton = document.querySelector(".clear")
+const operator = document.querySelectorAll(".operator");
+const operators = ["+", "-", "*", "/"];
+
+let clear = new Calculator;
+
+
+
+// ARRAY OF NUMBERS
+
+let initial = []
+button.forEach((button) => {
+  // console.log(button.className === "clear");
+  button.addEventListener("click", () => {
+    const value = button.dataset.value;
+    initial.push(value)
+    let joined = initial.join('')
+    if (!isNaN(joined)) {
+      display.textContent = joined;
+      console.log(joined);
+    } 
+    return joined;
+  });
+});
+
+//2ND NUMBER
+let initial2= []
+function isNumberAfterOperators(number2)  {
+  
+  initial2 = initial2.concat(number2);
+
+   let joint= initial2.join('')
+   console.log(joint);
+   display.textContent= joint;
+
+}
+
+
+
+function setOperator(input) {
+  //  const operators = ["+", "-", "*", "/"];
+
+   // Check if the input is in the list of operators
+   return operators.includes(input);
+  
+}
+
+
+//OPERATORS
+operator.forEach((operatorButton) => {
+  operatorButton.addEventListener("click", () => {
+    const operator = operatorButton.dataset.value;
+    const value = operatorButton.dataset.value
+    console.log(value);
+    // if (initial.length > 0) {
+    //   calculator.setOperator(operator);
+    //   display.textContent += " " + operator + " ";
+     
+    // }
+  });
+});
+
+
+//CLEAR
+clearButton.addEventListener("click", () => {
+  initial = calculator.clear();
+  display.textContent = "";
+});
+
+
+const equalButton = document.querySelector(".equal");
+equalButton.addEventListener("click", () => {
+  console.log('answer');
+  let calculate= joined += joined
+  const result = calculator.calculate();
+  display.textContent = result;
+});
+

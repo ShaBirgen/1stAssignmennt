@@ -1,0 +1,68 @@
+/* Responsive media query */
+@media (max-width: 800px) {
+    .links, .actions {
+        display: none;
+    }
+    .one, .container {
+        display: block;
+        width: 100vw;
+        height: max-content;
+    }
+    .content > h1{
+        font-size: 30px;
+    }
+    .quotation {
+        margin-top: 3%;
+        width: 100%;
+    }
+    .cards, .two, .usercards, .letter, #container, .details, .pricing-cards {
+        flex-direction: column;
+    }
+    .card1, .card2, .card3 {
+        margin-bottom: 2%;
+        box-shadow: none;
+    }
+    .break {
+        height: 70vh;
+    }
+    .goal1, .goal2, .goal3 {
+        padding: 20px;
+        margin-bottom: 0%;
+    }
+    .usercards {
+        /* flex-wrap: wrap; */
+        justify-content: space-between;
+        align-items: center;
+    }
+    .user {
+        margin-bottom: 2%;
+    }
+    .bookmark, .bookmark1, .bookmark2 {
+        font-size: 25px;
+    }
+    .three, .two,.pricing, .about {
+        height: max-content;
+    }
+    .icons > img {
+        width: 20%;
+    }
+    .card-light, #dark {
+        margin: 2%;
+    }
+    .txt {
+        text-align: center;
+    }
+    .form {
+        width: 100%;
+    }
+    #break {
+        display: none;
+    }
+    .contact {
+        height: max-content;
+        padding: 20px;
+    }
+    div > .bt5 {
+        padding: 10px;
+    }
+}

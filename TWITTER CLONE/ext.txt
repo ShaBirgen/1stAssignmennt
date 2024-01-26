@@ -1,0 +1,76 @@
+// let content = document.querySelector('.content');
+// let stock =[];
+
+// function fetchuserId(callback) {
+//   // Fetching product data from the dummy API
+//   fetch("https://jsonplaceholder.typicode.com/posts")
+//     .then((response) => response.json())
+//     .then((data) => callback(null, data))
+//     .catch((error) => callback("Error fetching Users:", error));
+// };
+
+// function processData() {
+//   fetchuserId((error, data) => {
+//     if (error) {
+//       console.log(error);
+//       return;
+//     }
+
+//     stock = data.content;
+//     console.log(stock);
+
+//     stock.forEach((content, index) => {
+//       // Creating HTML elements for each product
+//       // ...
+
+//       // Appending the created elements to the "products" container
+//       products.appendChild(content);
+//     });
+//   });
+// }
+
+// // Calling the processData function to fetch and display products
+// processData();
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Replace these URLs with your actual API endpoints
+  const userApiUrl = "https://jsonplaceholder.typicode.com/users";
+  const postsApiUrl = "https://jsonplaceholder.typicode.com/posts";
+
+  // Fetch user data
+  fetch(userApiUrl)
+    .then((response) => response.json())
+    .then((user) => {
+      // Fetch user's posts
+      return fetch(postsApiUrl);
+    })
+    .then((response) => response.json())
+    .then((posts) => {
+      // Display user posts
+      displayUserPosts(posts);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+
+  function displayUserPosts(posts) {
+    const userPostsContainer = document.getElementById("userPosts");
+
+    // Clear existing content
+    userPostsContainer.innerHTML = "";
+
+    if (posts.length === 0) {
+      userPostsContainer.innerHTML = "<p>No posts available</p>";
+    } else {
+      const postsList = document.createElement("ul");
+
+      posts.forEach((post) => {
+        const postItem = document.createElement("li");
+        postItem.textContent = post.title;
+        postsList.appendChild(postItem);
+      });
+
+      userPostsContainer.appendChild(postsList);
+    }
+  }
+});

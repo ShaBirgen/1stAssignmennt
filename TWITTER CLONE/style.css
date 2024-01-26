@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #23a6f0;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .bg{
+    background-image: url("https://twitter-signals-7iou.vercel.app/assets/background.jpg" );
+    height: 20vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center; */
+/* } */
+.bg {
+    width: 100vw;
+    height: 25vh;
+}
+.logo >a{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+select {
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+}
+
+.postcards, .commentsdisplay {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    height: max-content;
+    /* width: 50%; */
+}
+.card {
+    height: max-content;
+    min-width: 280px;
+    max-width: 280px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin: 10px;
+}
+.userdet {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.userdet > img {
+    max-width: 50px;
+    min-width: 20px;
+    border-radius: 50%;
+    border: 2px solid greenyellow;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.username, .timestamp {
+    color: gray;
+}
+.bgp{
+    margin-top: -50px;
+}
+.profilecontact {
+    padding-left: 50px;
+    /* margin-top: 50px; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 20px;
+    /* justify-content: center; */
+}
+
+.profilecontact > img {
+    max-width: 100px;
+}
+
+.words {
+    margin-top: 10px;
+}
+
+.stats {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 558px) {
+    .content {
+        flex-direction: column;
+    }
+}

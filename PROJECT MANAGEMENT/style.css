@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #507455;
+    color: #000202;
+    align-items: center;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 6rem;
+    width: 50%;
+    height: 0%; 
+    
+}
+.createproject{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    
+}
+.createproject> input{
+    height: 2rem;
+    width: 40vw;
+}
+select{
+    width: 20vw;
+}
+#toggle{
+    height: 4rem;
+    margin-left: 2rem;
+}
