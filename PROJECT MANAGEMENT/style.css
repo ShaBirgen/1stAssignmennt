@@ -3,29 +3,43 @@
     margin: 0;
 }
 body{
-    background-color: #507455;
+    background-color: #68a571;
     color: #000202;
-    align-items: center;
+    /* align-items: start; */
 }
 .navbar{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    background-color: #9bcca2;
+    height: 8vw;
+    align-items: center;
+    gap: 10rem;
     
+}
+#create{
+    height: 4rem;
+    width: 5rem;
+    border: none;
+    border-radius: 1rem;
+}
+#create:hover, #toggle:hover{
+    background-color: #2c6734;
 }
 .container{
     display: flex;
+    /* flex-direction: row; */
     justify-content: center;
+    align-items: start;
     padding: 6rem;
-    width: 50%;
-    height: 0%; 
+    gap: 2rem;
+    border: 2px solid white;
+    
     
 }
 .createproject{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    
-    
 }
 .createproject> input{
     height: 2rem;
@@ -36,5 +50,16 @@ select{
 }
 #toggle{
     height: 4rem;
-    margin-left: 2rem;
+    border: none;
+    border-radius: 1rem;
+    width: 8rem;
+}
+.projectcard{
+    height: 25vh;
+    background-color: #48664c;
+    width: 20vw;
+    display: block;
+    padding: 2rem;
+    border: 2px solid white;
+    font-size: 1.5rem;
 }

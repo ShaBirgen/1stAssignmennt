@@ -8,32 +8,29 @@
 </head>
 <body>
     <div class="navbar">
+        <button id="create"> CREATE</button>
         <h1>WELCOME TO PMD</h1>
-        <button id="logout.btn"> LOGOUT</button>
+        <button id="toggle">ADD PROJECT</button>
     </div>
-    <br>
     <div class="container">
         <form class="createproject" style="display: none;">
+            <p>Kick ass and shine bright. All the best in your project.</p>
             <input type="text" placeholder="Project title" id="title">
             <input type="date" placeholder="Start date" id="start">
             <input type="date" placeholder="Expiry" id="end">
             <input type="text" placeholder="Project Manager name" id="Pname">
             <input type="text" placeholder="department" id="department">
             <input type="text" placeholder="Location" id="location">
-            <!-- <input type="text" placeholder="KRA PIN" id="name">
-            <input type="number" placeholder="Bank Account Number" id="name">
-            <input type="text" placeholder="profile url" id="name"> -->
-
-        <select name="role" >
-            <option value=""> Select role</option>
-            <option value="Project Manager">Admin</option>
-            <option value="Project Manager">Project Manager</option>
-            <option value="Software Engineer">Engineer</option>
-            <option value="QA/QE">QA/QE</option>
-        </select>
-        <button type="submit">CREATE PROJECT</button>
+            <button id="submit" style="display: flex;" >SUBMIT</button>
         </form>
-        <button id="toggle">ADD PROJECT</button>
+        <!-- <div class="projectcard">
+            <div class="title">Water Commissioning</div>
+            <div class="start">23/03/2024</div>
+            <div class="end">23/10/2024</div>
+            <div class="manager">Mr Benjamin Birgen</div>
+            <div class="location">Kapsabet</div>
+            <button class="navigate">View</button>
+        </div> -->
     </div>
 </body>
 <script src="/dist/project.js"></script>
