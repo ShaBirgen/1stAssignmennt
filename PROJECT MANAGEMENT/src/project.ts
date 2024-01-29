@@ -7,7 +7,9 @@ let Leader = document.querySelector("#Pname") as HTMLInputElement;
 let Department = document.querySelector("#department") as HTMLInputElement;
 let Area = document.querySelector("#location") as HTMLInputElement;
 let Submit = document.querySelector("#submit") as HTMLButtonElement
-// let container = document.querySelector(".container") as HTMLDivElement
+let container = document.querySelector(".container") as HTMLDivElement;
+
+const Project: Project []= [];
 
 window.onload = () => {
     let projectArr:any = localStorage.getItem('projects');
@@ -16,6 +18,7 @@ window.onload = () => {
     projectArr.forEach((item:any) => {
         Project.push(item);
     })
+    
     createCards(projectArr);
 }
 
@@ -31,7 +34,7 @@ createProject.addEventListener ( "click", (() => {
 
 Submit.addEventListener("click", () => {
   if (createproject.style.display == "flex") {
-    createproject.style.display = "non";
+    createproject.style.display = "none";
   }
 });
 
@@ -46,14 +49,14 @@ interface Project{
     Leader: string;
 }
 
-const Project: Project []= []
 // localStorage.setItem("projects", JSON.stringify(Project));
-const container = document.createElement("div") as HTMLDivElement;
+// const container = document.createElement("div") as HTMLDivElement;
 function createCards(project: Project[]) {
   // if (Project.length >= 1)
-  container.innerHTML = "";
-
-  Project.forEach((project, index) => {
+  container.textContent = "";
+  
+  project.forEach((items, index) => {
+    
     // Create a new 'div' element for each product
     let item = document.createElement("div") as HTMLDivElement;
     item.className = "projectcard";
@@ -61,34 +64,32 @@ function createCards(project: Project[]) {
     // Create div elements for each property
     let titleDiv = document.createElement("div") as HTMLDivElement;
     titleDiv.className = "title";
-    titleDiv.textContent = project.Title;
+    titleDiv.textContent = `Title: ${items.Title}`;
 
     let startDateDiv = document.createElement("div") as HTMLDivElement;
     startDateDiv.className = "start";
-    startDateDiv.textContent = project.StartDate;
+    startDateDiv.textContent = `Start Date: ${items.StartDate}`;
 
     let endDateDiv = document.createElement("div") as HTMLDivElement;
     endDateDiv.className = "end";
-    endDateDiv.textContent = project.EndDate;
+    endDateDiv.textContent = `End date: ${items.EndDate}`;
 
     let leaderDiv = document.createElement("div") as HTMLDivElement;
     leaderDiv.className = "manager";
-    leaderDiv.textContent = project.Leader;
+    leaderDiv.textContent = `Project manager: ${items.Leader}`;
 
     let locationDiv = document.createElement("div") as HTMLDivElement;
     locationDiv.className = "navigate";
-    locationDiv.textContent = project.Area;
+    locationDiv.textContent = `Location: ${items.Area}`;
 
     // Create a delete button
     let deletebtn = document.createElement("button");
     deletebtn.textContent = "Delete";
     deletebtn.addEventListener("click", () => {
         // Use slice to create a shallow copy of the array
-        let delProject = Project.slice();
-        delProject.splice(index, 1);
-        console.log(delProject);
+        deleteItem(index)
 
-
+    })
     // Append created elements to the item div
     item.appendChild(titleDiv);
     item.appendChild(startDateDiv);
@@ -101,13 +102,13 @@ function createCards(project: Project[]) {
     container.appendChild(item);
 
     // Append the containerDiv to the document body
-    document.body.appendChild(container);
-  })});
-}
+    // document.body.appendChild(container);
+  })};
 
 
 
-createproject.addEventListener("click",(e) => {
+
+createproject.addEventListener("submit",(e) => {
     e.preventDefault()
 
     const isFormValid =
@@ -133,6 +134,8 @@ createproject.addEventListener("click",(e) => {
     
     createCards(Project);
     localStorage.setItem('projects', JSON.stringify(Project));
+    console.log();
+    
 
     // const Project = JSON.parse(localStorage.getItem('projects') || '[]');
     // projects.push(newProject);
@@ -145,3 +148,9 @@ createproject.addEventListener("click",(e) => {
   }
 
 })
+
+function deleteItem(index:number) {
+  Project.splice(index,1);
+    localStorage.setItem("projects", JSON.stringify(Project));
+    createCards(Project);
+}
