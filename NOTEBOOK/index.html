@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>NOTEBOOK</title>
+  </head>
+  <body>
+    <nav>
+      <h1>WELCOME TO YOU THOUGHTS.</h1>
+      <button id="toggle">ADD NOTE</button>
+    </nav>
+    
+      <form class="createNote" style="display: none">
+        <input type="text" placeholder="Note title" id="title" />
+        <input
+          type="text"
+          placeholder="What are your thoughts today?"
+          id="desc"
+        />
+        <input type="text" placeholder="Location" id="location" />
+        <button id="submit" style="display: flex">SUBMIT</button>
+      </form>
+      <div id="container"><!-- <div class="NoteCard">
+        <input type="text" placeholder="Note title" id="title" />
+        <input type="text" placeholder="Your thoughts here" id="thoughts" />
+        <a href="note.html"><button class="det">DETAILS</button></a>
+      </div> -->
+    </div>
+  </body>
+  <script src="dist/index.js"></script>
+</html>
