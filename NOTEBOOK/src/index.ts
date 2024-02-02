@@ -57,11 +57,11 @@ container.textContent=" "
 
     let DescriptionDiv = document.createElement("div") as HTMLDivElement;
     DescriptionDiv.className = "start";
-   DescriptionDiv.textContent = `Start Date: ${items.Description}`;
+   DescriptionDiv.textContent = `Description: ${items.Description}`;
 
     let LocateDiv = document.createElement("div") as HTMLDivElement;
     LocateDiv.className = "end";
-    LocateDiv.textContent = `End date: ${items.Locate}`;
+    LocateDiv.textContent = `Location: ${items.Locate}`;
 
 
     // Create a delete button
