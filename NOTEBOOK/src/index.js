@@ -1,12 +1,11 @@
-"use strict";
-let CreateNote = document.querySelector(".createNote");
-let submit = document.querySelector("#submit");
-let Title = document.querySelector("#title");
-let Description = document.querySelector("#desc");
-let Locate = document.querySelector("#location");
-let Toggle = document.querySelector("#toggle");
-let container = document.querySelector("#container");
-Toggle.addEventListener("click", () => {
+var CreateNote = document.querySelector(".createNote");
+var submit = document.querySelector("#submit");
+var Title = document.querySelector("#title");
+var Description = document.querySelector("#desc");
+var Locate = document.querySelector("#location");
+var Toggle = document.querySelector("#toggle");
+var container = document.querySelector("#container");
+Toggle.addEventListener("click", function () {
     if (CreateNote.style.display == "none") {
         CreateNote.style.display = "flex";
         // createProject.textContent=" CLOSE"
@@ -15,45 +14,45 @@ Toggle.addEventListener("click", () => {
         CreateNote.style.display = "flex";
     }
 });
-submit.addEventListener("click", () => {
+submit.addEventListener("click", function () {
     if (CreateNote.style.display == "flex") {
         CreateNote.style.display = "none";
     }
 });
-const Note = [];
-window.onload = () => {
-    let noteArr = localStorage.getItem("note");
+var Note = [];
+window.onload = function () {
+    var noteArr = localStorage.getItem("note");
     noteArr = JSON.parse(noteArr);
-    noteArr.forEach((item) => {
+    noteArr.forEach(function (item) {
         Note.push(item);
     });
     createNote(noteArr);
 };
 function createNote(note) {
     container.textContent = " ";
-    note.forEach((items, index) => {
+    note.forEach(function (items, index) {
         // Create a new 'div' element for each product
-        let item = document.createElement("div");
+        var item = document.createElement("div");
         item.className = "NoteCard";
         // Create div elements for each property
-        let titleDiv = document.createElement("div");
+        var titleDiv = document.createElement("div");
         titleDiv.className = "title";
-        titleDiv.textContent = `Title: ${items.Title}`;
-        let DescriptionDiv = document.createElement("div");
+        titleDiv.textContent = "Title: ".concat(items.Title);
+        var DescriptionDiv = document.createElement("div");
         DescriptionDiv.className = "start";
-        DescriptionDiv.textContent = `Description: ${items.Description}`;
-        let LocateDiv = document.createElement("div");
+        DescriptionDiv.textContent = "Description: ".concat(items.Description);
+        var LocateDiv = document.createElement("div");
         LocateDiv.className = "end";
-        LocateDiv.textContent = `Location: ${items.Locate}`;
-        let date = document.createElement("p");
-        date.textContent = `Date: ${items.Date}/${items.Month}/${items.Year}`;
-        let time = document.createElement("p");
+        LocateDiv.textContent = "Location: ".concat(items.Locate);
+        var date = document.createElement("p");
+        date.textContent = "Date: ".concat(items.Date, "/").concat(items.Month, "/").concat(items.Year);
+        var time = document.createElement("p");
         // date.textContent = `${items.Time}`;
         //DETAILS BUTTON
-        let detailsbtn = document.createElement("button");
+        var detailsbtn = document.createElement("button");
         detailsbtn.textContent = "DETAILS";
         detailsbtn.className = "details";
-        detailsbtn.addEventListener("click", () => {
+        detailsbtn.addEventListener("click", function () {
             window.location.href = "note.html";
         });
         // Create a delete button
@@ -72,14 +71,14 @@ function createNote(note) {
         container.appendChild(item);
     });
 }
-const currentDate = new Date();
-CreateNote.addEventListener("submit", (e) => {
+var currentDate = new Date();
+CreateNote.addEventListener("submit", function (e) {
     e.preventDefault();
-    const isFormValid = Title.value.trim() !== "" &&
+    var isFormValid = Title.value.trim() !== "" &&
         Description.value.trim() !== "" &&
         Locate.value.trim() !== "";
     if (isFormValid) {
-        let newNote = {
+        var newNote = {
             Title: Title.value.trim(),
             Description: Description.value.trim(),
             Locate: Locate.value.trim(),

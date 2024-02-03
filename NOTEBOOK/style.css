@@ -9,28 +9,69 @@ body {
 nav {
   display: flex;
   align-items: center;
-  border: 2px solid red;
   height: 20vh;
+  justify-content: space-around;
+  background-image: url("pexels-pixabay-235985.jpg");
+  color: white;
+}
+#toggle {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 10%;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  font-size: 13px;
+  color: gray;
+  font-weight: bold;
+  img {
+    height: 20px;
+  }
+}
+#toggle:hover {
+  height: 50px;
+  background-color: #cebf9e;
+  cursor: pointer;
+  color: white;
 }
 nav > h1 {
   font-size: 50px;
 }
 #container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  gap: 20px;
+
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 .createNote {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  border: 2px solid blue;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 2px solid blue; */
   height: 50vh;
-  gap: 20px;
+}
+input {
+  height: 30px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+#submit {
+  height: 25px;
+  width: 5.5%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(83, 83, 100);
+  color: white;
 }
 .Note {
   display: flex;
@@ -41,11 +82,11 @@ nav > h1 {
   height: 50vh;
   gap: 20px;
 }
-#title {
+/* #title {
   height: 5vh;
   width: 50vw;
   font-size: 20px;
-}
+} */
 #thoughts {
   height: 30vh;
   width: 50vw;
@@ -60,9 +101,21 @@ nav > h1 {
   display: flex;
   flex-direction: column;
   border: 2px solid white;
+  border-radius: 10px;
+  margin: 20px;
   gap: 20px;
   width: 30vw;
-  height: 30vh;
-  align-items: center;
-  font-size: 30px;
+  padding: 18px;
+  justify-content: space-evenly;
+  font-size: 20px;
+
+  button {
+    width: 90%;
+    background: none;
+    text-decoration: underline;
+    border: none;
+  }
+}
+.title {
+  font-weight: bold;
 }
