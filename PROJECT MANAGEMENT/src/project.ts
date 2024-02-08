@@ -1,36 +1,35 @@
-let createProject = document.querySelector('#toggle') as HTMLButtonElement
-let createproject= document.querySelector(".createproject") as HTMLFormElement
-let Title= document.querySelector("#title") as HTMLInputElement
+let createProject = document.querySelector("#toggle") as HTMLButtonElement;
+let createproject = document.querySelector(".createproject") as HTMLFormElement;
+let Title = document.querySelector("#title") as HTMLInputElement;
 let StartDate = document.querySelector("#start") as HTMLInputElement;
 let EndDate = document.querySelector("#end") as HTMLInputElement;
 let Leader = document.querySelector("#Pname") as HTMLInputElement;
 let Department = document.querySelector("#department") as HTMLInputElement;
 let Area = document.querySelector("#location") as HTMLInputElement;
-let Submit = document.querySelector("#submit") as HTMLButtonElement
+let Submit = document.querySelector("#submit") as HTMLButtonElement;
 let container = document.querySelector(".container") as HTMLDivElement;
 
-const Project: Project []= [];
+const Project: Project[] = [];
 
 window.onload = () => {
-    let projectArr:any = localStorage.getItem('projects');
-    projectArr = JSON.parse(projectArr);
-    
-    projectArr.forEach((item:any) => {
-        Project.push(item);
-    })
-    
-    createCards(projectArr);
-}
+  let projectArr: any = localStorage.getItem("projects");
+  projectArr = JSON.parse(projectArr);
 
-createProject.addEventListener ( "click", (() => {
+  projectArr.forEach((item: any) => {
+    Project.push(item);
+  });
 
-     if (createproject.style.display == 'none') {
-        createproject.style.display='flex'
-        // createProject.textContent=" CLOSE"
-    } else {
-        createproject.style.display='flex'
-    }
-}))
+  createCards(projectArr);
+};
+
+createProject.addEventListener("click", () => {
+  if (createproject.style.display == "none") {
+    createproject.style.display = "flex";
+    // createProject.textContent=" CLOSE"
+  } else {
+    createproject.style.display = "flex";
+  }
+});
 
 Submit.addEventListener("click", () => {
   if (createproject.style.display == "flex") {
@@ -38,15 +37,13 @@ Submit.addEventListener("click", () => {
   }
 });
 
-
-
-interface Project{
-    Title: string;
-    StartDate: string;
-    EndDate: string;
-    Area: string;
-    Department: string;
-    Leader: string;
+interface Project {
+  Title: string;
+  StartDate: string;
+  EndDate: string;
+  Area: string;
+  Department: string;
+  Leader: string;
 }
 
 // localStorage.setItem("projects", JSON.stringify(Project));
@@ -54,9 +51,8 @@ interface Project{
 function createCards(project: Project[]) {
   // if (Project.length >= 1)
   container.textContent = "";
-  
+
   project.forEach((items, index) => {
-    
     // Create a new 'div' element for each product
     let item = document.createElement("div") as HTMLDivElement;
     item.className = "projectcard";
@@ -86,10 +82,9 @@ function createCards(project: Project[]) {
     let deletebtn = document.createElement("button");
     deletebtn.textContent = "Delete";
     deletebtn.addEventListener("click", () => {
-        // Use slice to create a shallow copy of the array
-        deleteItem(index)
-
-    })
+      // Use slice to create a shallow copy of the array
+      deleteItem(index);
+    });
     // Append created elements to the item div
     item.appendChild(titleDiv);
     item.appendChild(startDateDiv);
@@ -103,15 +98,13 @@ function createCards(project: Project[]) {
 
     // Append the containerDiv to the document body
     // document.body.appendChild(container);
-  })};
+  });
+}
 
+createproject.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-
-
-createproject.addEventListener("submit",(e) => {
-    e.preventDefault()
-
-    const isFormValid =
+  const isFormValid =
     Title.value.trim() !== "" &&
     StartDate.value.trim() !== "" &&
     EndDate.value.trim() !== "" &&
@@ -130,27 +123,23 @@ createproject.addEventListener("submit",(e) => {
     };
 
     Project.push(newProject);
-    console.log("Hello",Project);
-    
+    console.log("Hello", Project);
+
     createCards(Project);
-    localStorage.setItem('projects', JSON.stringify(Project));
+    localStorage.setItem("projects", JSON.stringify(Project));
     console.log();
-    
 
     // const Project = JSON.parse(localStorage.getItem('projects') || '[]');
     // projects.push(newProject);
     // console.log();
-    
-    
   } else {
     // Handle the case where the form is not valid (e.g., show an error message)
-    console.log('Form is not valid. Please fill in all required fields.');
+    console.log("Form is not valid. Please fill in all required fields.");
   }
+});
 
-})
-
-function deleteItem(index:number) {
-  Project.splice(index,1);
-    localStorage.setItem("projects", JSON.stringify(Project));
-    createCards(Project);
+function deleteItem(index: number) {
+  Project.splice(index, 1);
+  localStorage.setItem("projects", JSON.stringify(Project));
+  createCards(Project);
 }
