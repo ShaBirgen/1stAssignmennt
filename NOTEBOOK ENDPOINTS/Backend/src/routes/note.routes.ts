@@ -1,9 +1,9 @@
 
 import { Router } from "express";
-import { Notes } from "../Controllers/create.note";
+import { createNote } from "../Controllers/create.note";
 
-const createNote = Router();
+const createNoteRouter = Router();
 
-createNote.post("/create", createNote);
+createNoteRouter.post("/create", createNote);
 
-export default createNote;
+export default createNoteRouter;

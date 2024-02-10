@@ -1,9 +1,9 @@
-import mssql from "mssql";
+import mssql from 'mssql'
 
 export const sqlConfig = {
   user: "sa",
   password: "37853801",
-  database: "Notebook",
+  database: "NOTES",
   server: "DESKTOP-QO3AGRF",
   pool: {
     max: 10,
@@ -25,12 +25,11 @@ let connect = async () => {
   if (pool.connected) {
     console.log("connected");
 
-    let Note =
-      "CREATE TABLE Note(User_id VARCHAR(255), Title VARCHAR(255), Content(255), Created_At time datetime)";
-    let result = (await (await pool.connect()).query(Note)).rowsAffected;
+    let Note = "CREATE TABLE Note(Note_id VARCHAR(255), Title VARCHAR(255), Content VARCHAR(1500), Created_At VARCHAR(100))";
+    let result = (await pool.request().query(Note)).rowsAffected;
     
 
-    console.log('result');
+    console.log(result);
   } else {
     console.log("not connected");
   }

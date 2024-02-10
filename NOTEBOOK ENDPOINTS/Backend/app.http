@@ -1,0 +1,7 @@
+POST http://localhost:3000/note/create
+Content-Type: application/json
+
+{
+    "Title": "This is a title",
+    "Content": "This is the content"
+}

@@ -1,5 +1,8 @@
 import { Request, Response } from "express";
 import { newNote } from "../interface/note.interface";
+import timestamp from "time-stamp";
+import { v4 } from "uuid";
+
 
 let notes: newNote[] = [];
 
@@ -8,10 +11,10 @@ export const createNote = async (req: Request, res: Response) => {
 
   try {
     const newNote: newNote = {
-      Note_id: notes.length + 1, 
+      Note_id: v4(), 
       Title: Title,
       Content: Content,
-      createdAt: new Date(), 
+      createdAt: timestamp(), 
     };
 
     notes.push(newNote);
@@ -23,7 +26,7 @@ export const createNote = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({
       errorMsg: "Internal Server error",
-      error: error.message,
+      error
     });
   }
 };
