@@ -10,16 +10,10 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
-  formData = {
-    fullname: '',
-    email: '',
-    phoneNumber: '',
-    password: '',
-  };
 
   submitForm(form: NgForm) {
     if (form.valid) {
-      console.log('Form submitted:', this.formData);
+      console.log('Form submitted:');
       
     }
   }
