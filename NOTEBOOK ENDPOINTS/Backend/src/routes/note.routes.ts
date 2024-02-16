@@ -1,7 +1,7 @@
 
 import { Router } from "express";
 import { createNote } from "../Controllers/create.note";
-import getNotes from '../Controllers/getNotes';
+import { getNotes } from "../Controllers/getNotes";
 
 const createNoteRouter = Router();
 

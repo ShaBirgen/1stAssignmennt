@@ -1,0 +1,64 @@
+<app-navbar> </app-navbar>
+<div class="wrapper">
+  <div class="sidebar">
+    <img
+      src="../../../assets/Texas Electrical Residential Contractors, LLC.jpeg"
+      alt=""
+    />
+  </div>
+  <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
+    <!-- FULL NAME -->
+    <h1>Register</h1>
+    <div class="input-div">
+      <label for="fullname">Full name :</label> <br />
+      <input
+        type="text"
+        name="fullname"
+        id="fullname"
+        [(ngModel)]="formData.fullname"
+        required
+      />
+    </div>
+
+    <!-- EMAIL ADDRESS  -->
+    <div class="input-div">
+      <label for="email">Email :</label> <br />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        [(ngModel)]="formData.email"
+        required
+      />
+    </div>
+
+    <!-- PHONE NUMBER -->
+    <div class="input-div">
+      <label for="phone-number">Phone Number :</label> <br />
+      <input
+        type="text"
+        name="phoneNumber"
+        id="phone-number"
+        [(ngModel)]="formData.phoneNumber"
+        required
+      />
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="input-div">
+      <label for="password">Password :</label> <br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        [(ngModel)]="formData.password"
+        required
+      />
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="submit">
+      <button type="submit">Create Account</button>
+    </div>
+  </form>
+</div>

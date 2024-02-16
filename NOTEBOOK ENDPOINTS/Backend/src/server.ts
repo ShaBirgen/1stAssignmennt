@@ -15,7 +15,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction)=>{
 })
 
 
-const PORT = 3000
+const PORT = 3001
 
 app.listen(PORT, ()=>{
     console.log("server is listening on port", PORT);

@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  padding-top: 120px;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar > img {
+  width: 400px;
+  height: 410px;
+}
+form {
+  background-color: white;
+  height: 380px;
+  width: 280px;
+  padding: 13px;
+}
+
+.input-div {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.input-div > input {
+  padding: 8px;
+  width: 15vw;
+}
+.submit {
+  padding: 5px;
+  padding-left: 80px;
+}
+.submit > button {
+  padding: 10px;
+  font-size: 15px;
+  background-color: grey;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}

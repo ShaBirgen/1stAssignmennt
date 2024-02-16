@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import mssql from "mssql";
-import sqlConfig from "../Config/sql.config";
+import { sqlConfig } from "../Config/sql.config";
+// import sqlConfig from "../Config/sql.config";
 
 // Get all notes
 export const getNotes = async (req: Request, res: Response) => {
