@@ -1,0 +1,42 @@
+//REGISTER USER
+
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "First_Name":"Sharon",
+    "Last_Name": "Cherotich",
+    "Email": "sharon.cherotich@thejitu.com",
+    "Cohort_Number": "22",
+    "Password": "sharon12"
+}
+
+###
+//GET ONE USER
+
+GET http://localhost:3000/auth/getUser/57726c7b-2c09-4aa3-9635-747ca8730a49
+Content-Type: application/json
+
+###
+//UPDATE USER
+POST  http://localhost:3000/auth/update/e233cfc4-a23e-4ab6-97cd-dcba5f61daab
+Content-Type: application/json
+
+{
+    "First_Name":"Sharon",
+    "Last_Name": "Cherotich",
+    "Email": "sharon.cherotich@thejitu.com",
+    "Cohort_Number": "70"
+}
+
+
+###
+//DELETE USER
+
+DELETE http://localhost:3000/auth/delete/e990b9e2-ca36-4765-880c-db5ebc5d8cd0
+Content-Type: application/json
+
+###
+//GET ALL USERS
+GET http://localhost:3000/auth/allUsers
+Content-Type: application/json

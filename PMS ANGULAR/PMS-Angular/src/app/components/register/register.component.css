@@ -23,6 +23,9 @@ form {
 .input-div > input {
   padding: 8px;
   width: 15vw;
+  background-color: beige;
+  border: none;
+  border-radius: 10px;
 }
 .submit {
   padding: 5px;

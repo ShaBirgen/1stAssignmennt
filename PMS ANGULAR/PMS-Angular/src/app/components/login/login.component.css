@@ -28,4 +28,6 @@ form {
   border-radius: 10px;
   width: 8vw;
   background-color: grey;
+  color: white;
+  border: none;
 }
