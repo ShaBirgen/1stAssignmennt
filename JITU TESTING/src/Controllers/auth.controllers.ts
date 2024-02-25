@@ -5,7 +5,7 @@ import { v4 } from "uuid";
 import bcrypt from "bcrypt"
 import validator from "validator"
 
-interface User{
+export interface User{
     User_id: string;
     First_Name:string;
     Last_Name: string;
@@ -32,16 +32,17 @@ interface User{
         }
       }
 
+      // REGISTER USER
 export const registerUser = async (req:Request, res:Response) =>{
     
     try {
+      const pool = await mssql.connect(sqlConfig);
         const user: User = req.body;
         if(verifyEmail(user.Email)){
           const hash_pwd = await bcrypt.hash(user.Password, 5);
           const User_id = v4();
           console.log("User_id", User_id);
 
-          const pool = await mssql.connect(sqlConfig);
 
           const tableExists =
             await pool.query`SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = N'users'`;
@@ -87,6 +88,8 @@ export const registerUser = async (req:Request, res:Response) =>{
     }
 }
 
+
+// GET ONE USER
 export const getUser = async(req:Request, res:Response) =>{
     const User_id= req.params.User_id;
 
@@ -113,6 +116,8 @@ export const getUser = async(req:Request, res:Response) =>{
     }
 }
 
+
+// DEELETE A USER
 export const deleteUser = async (
   req: Request,
   res: Response
@@ -142,6 +147,8 @@ export const deleteUser = async (
 };
 
 
+// GET ALL USERS
+
 export const getAllUsers = async (
   req: Request,
   res: Response
@@ -157,6 +164,8 @@ export const getAllUsers = async (
   }
 };
 
+
+// UPDATE USER
 export const updateUser = async (
   req: Request,
   res: Response

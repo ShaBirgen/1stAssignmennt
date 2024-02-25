@@ -4,11 +4,11 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "First_Name":"Sharon",
-    "Last_Name": "Cherotich",
-    "Email": "sharon.cherotich@thejitu.com",
+    "First_Name":"Amanda",
+    "Last_Name": "Chepkoech",
+    "Email": "amanda.chepkoech@thejitu.com",
     "Cohort_Number": "22",
-    "Password": "sharon12"
+    "Password": "amanda12"
 }
 
 ###
@@ -26,14 +26,14 @@ Content-Type: application/json
     "First_Name":"Sharon",
     "Last_Name": "Cherotich",
     "Email": "sharon.cherotich@thejitu.com",
-    "Cohort_Number": "70"
+    "Cohort_Number": "22"
 }
 
 
 ###
 //DELETE USER
 
-DELETE http://localhost:3000/auth/delete/e990b9e2-ca36-4765-880c-db5ebc5d8cd0
+DELETE http://localhost:3000/auth/delete/675b5d93-1868-4580-9884-331ca56703ee
 Content-Type: application/json
 
 ###
