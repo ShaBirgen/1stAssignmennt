@@ -1,0 +1,22 @@
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  
+  "fullName": "Yoshi",
+  "email": "yoshi@gmail.com",
+  "phoneNumber": "0787654321",
+  "password": "test12"
+}
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "yoshi@gmail.com",
+  "password": "test12"
+}
+
+###
