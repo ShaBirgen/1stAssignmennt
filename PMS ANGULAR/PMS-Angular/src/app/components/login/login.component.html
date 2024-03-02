@@ -1,7 +1,7 @@
 <app-navbar> </app-navbar>
 
 
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
   <!-- EMAIL ADDRESS  -->
   <div class="input-div">
     <label for="email">Email :</label> <br />
