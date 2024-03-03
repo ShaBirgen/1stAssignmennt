@@ -6,7 +6,11 @@
       alt=""
     />
   </div>
-  <form class="form" (ngSubmit)="registerUser(registerForm.value)" #registerForm="ngForm">
+  <form
+    class="form"
+    (ngSubmit)="registerUser(registerForm.value)"
+    #registerForm="ngForm"
+  >
     <!-- FULL NAME -->
     <h1>Register</h1>
     <div class="input-div">
@@ -58,7 +62,9 @@
 
     <!-- SUBMIT -->
     <div class="submit">
-      <button type="submit" data-cy="create-account-link"> Create Account</button>
+      <button class="form-submit" type="submit" data-cy="create-account-link">
+        Create Account
+      </button>
     </div>
   </form>
 </div>

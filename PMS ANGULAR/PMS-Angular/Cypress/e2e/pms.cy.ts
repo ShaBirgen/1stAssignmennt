@@ -12,13 +12,13 @@ describe('Testing sigup functionality using fixtures', () => {
           cy.wait(1000);
           cy.visit('/login');
           cy.location('pathname').should('not.equal', '/register');
-          cy.location('pathname').should('equal', '');
+          cy.location('pathname').should('equal', '/login');
         });
     });
   });
 });
 
-describe('Sending requests to register user without hitting the backend', () => {
+describe('Sending requests to register user using fixtures', () => {
   beforeEach(() => {
     cy.visit('/register');
   });
@@ -51,7 +51,7 @@ describe('Testing login functionality', () => {
     });
   });
 
-  it('logs in user using fixture data', () => {
+  it('Login user using fixture data', () => {
     cy.visit('/login');
 
     cy.fixture('login.json').then((data) => {
@@ -63,7 +63,7 @@ describe('Testing login functionality', () => {
           cy.wait(1000);
           cy.visit('');
           cy.location('pathname').should('not.equal', '/login');
-          cy.location('pathname').should('equal', '');
+          cy.location('pathname').should('equal', '/');
         });
     });
   });

@@ -1,17 +1,17 @@
 <app-navbar> </app-navbar>
 
 
-<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+<form class="form" (ngSubmit)="loginUser(loginForm.value)" #loginForm="ngForm">
   <!-- EMAIL ADDRESS  -->
   <div class="input-div">
     <label for="email">Email :</label> <br />
-    <input type="email" formControlName="email" id="email" requireddata-cy="email-link">
+    <input type="email" name="email" id="email" ngModel data-cy="email-link">
   </div>
 
   <!-- PASSWORD -->
   <div class="input-div">
     <label for="password">Password :</label> <br />
-    <input type="password" formControlName="password" id="password" required data-cy="password-link">
+    <input type="password" name="password" id="password" ngModel data-cy="password-link">
   </div>
 
   <!-- SUBMIT -->

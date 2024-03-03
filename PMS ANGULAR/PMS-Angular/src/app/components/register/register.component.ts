@@ -35,7 +35,7 @@ export class RegisterComponent {
         console.log(response); // Handle successful registration response
         if (response.success) {
           // Registration successful, redirect to login
-          this.router.navigate(['/']);
+          this.router.navigate(['']);
           alert(response.message);
         } else {
           // Registration failed, handle error or display a message to the user
